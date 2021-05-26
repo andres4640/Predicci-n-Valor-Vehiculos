@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Prediccion Precio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-narrow">
+        <nav class="navbar navbar-dark bg-dark text-white bg-dark">
+            <a class="navbar-brand">Predicción Precio Vehiculos</a>
+        </nav>
+        <br>
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Kilometros de uso</label>
+                    <input type="number" class="form-control " id="kmUso" placeholder="Example input" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Gasolina</label>
+                    <select class="form-control" id="gasolina" required>
+                        <option value="Diesel" selected>Diesel</option>
+                        <option value="Petrol">Petroleo</option>
+                        <option value="LPG">LPG</option>
+                        <option value="CNG">CNG</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tipo de Vendedor</label>
+                    <select class="form-control" id="vendedor" required>
+                        <option value="Individual" selected> Individual</option>
+                        <option value="Dealer">Distribuidora</option>
+                        <option value="Trustmark Dealer">Distribuidora de confianza</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Transmisión</label>
+                    <select class="form-control" id="transmision" required>
+                        <option value="Manual" selected> Manual</option>
+                        <option value="Automatic">Automatico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Numero de dueños previos</label>
+                    <select class="form-control" id="numDuenos" required>
+                        <option value="First Owner" selected>Primer Dueño</option>
+                        <option value="Second Owner">Segundo Dueño</option>
+                        <option value="Third Owner">Tercer Dueño</option>
+                        <option value="Fourth & Above Owner">Cuarto Dueño o más</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Numero de Asientos</label>
+                    <input type="number" class="form-control" id="numAsientos" placeholder="Another input" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Kilometraje</label>
+                    <input type="number" class="form-control" id="numKilom" placeholder="Another input" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Capacidad de motor del carro (Medido en centimetros
+                        cubicos)</label>
+                    <input type="number" class="form-control" id="numPotencia" placeholder="Another input" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Maxima capacidad del motor (Caballos de fuerza)</label>
+                    <input type="number" class="form-control" id="numMotor" placeholder="Another input" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Torque (Newton-metro)</label>
+                    <input type="number" class="form-control" id="numTorque" placeholder="Another input" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Años de antiguedad</label>
+                    <input type="number" class="form-control" id="numAntig" placeholder="Another input" required>
+                </div>
+                <button type="button" class="btn btn-primary" id="predecir">Predecir</button>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="container" id="resultado-Contenedor">
+            <div class="alert alert-success" id="resultado-exito" role="alert">
+                <p>Precio Vehiculo: <b id="prediccion"></b></p>
+            </div>
+            <div class="alert alert-danger" id="resultado-fallo" role="alert">
+                <p>¡Error en la predicción!</p>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <script src="/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
